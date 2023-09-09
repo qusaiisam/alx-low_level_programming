@@ -16,17 +16,24 @@ int main(void)
 		{
 			for (k = z; k <= 9; k++)
 			{
-				putchar('0' + i);
-				putchar('0' + j);
-				putchar('0' + k);
+				if (i < j && j < k)
+				{
+				putchar(i + '0');
+				putchar(j + '0');
+				putchar(k + '0');
 				if (i + j + k == 24)
 				{
 					putchar('\n');
+					break;
 				}
 				putchar(',');
 				putchar(' ');
 			}
+			}
 		}
+		x++;
+		y++;
+		z++;
 	}
 	return (0);
 }

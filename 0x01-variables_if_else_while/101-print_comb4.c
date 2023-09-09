@@ -13,28 +13,28 @@ int main(void)
 
 		while (i <= '9')
 		{
-			j = '0';
-			while (j <= '9')
-			{
-				k = '0';
-				while (k <= '9')
-				{
-					if (i < j && j < k)
-					{
-						putchar(i);
-						putchar(j);
-						putchar(k);
-						if (i != 7)
-						{
-						putchar(',');
-						putchar(' ');
-						}
-					}
-					k++;
-				}
-				j++;
-			}
-			i++;
+		j = '0';
+		while (j <= '9')
+		{
+		k = '0';
+		while (k <= '9')
+		{
+		if (i < j && j < k)
+		{
+		putchar(i);
+		putchar(j);
+		putchar(k);
+		if (i != 7)
+		{
+		putchar(',');
+		putchar(' ');
+		}
+		}
+		k++;
+		}
+		j++;
+		}
+		i++;
 		}
 	putchar('\n');
 

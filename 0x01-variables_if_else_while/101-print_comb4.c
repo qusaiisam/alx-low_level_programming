@@ -8,11 +8,11 @@
 int main(void)
 {
 	int i, j, k;
-	int x = 0, y = 1, z = 2;
+	int x = 0, y = 0, z = 0;
 
-	for (i = x; i <= 9; i++)
+	for (i = x; i <= 7; i++)
 	{
-		for (j = y; j <= 9; j++)
+		for (j = y; j <= 8; j++)
 		{
 			for (k = z; k <= 9; k++)
 			{
@@ -22,16 +22,11 @@ int main(void)
 				if (i + j + k == 24)
 				{
 					putchar('\n');
-					break;
 				}
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		x++;
-		y++;
-
-	k++;
 	}
 	return (0);
 }

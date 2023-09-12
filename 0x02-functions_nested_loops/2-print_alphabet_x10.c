@@ -1,18 +1,17 @@
 #include "main.h"
 /**
- * main -  print alphbet in lowercase.
- *
- * Return: Always 0 (success)
-*/
+* print_alphabet_x10 - print lowercase letters
+* Description: this function prints '_putchar'
+* Return: always return 0
+**/
 void print_alphabet_x10(void)
 {
-	char let;
-	int i;
+	char x, i;
 
 	for (i = 0; i < 10; i++)
-	{		
-		for (let = 'a'; let <= 'z'; let++)
-			_putchar(let);
-	_putchar('\n');
+	{
+		for (x = 'a'; x <= 'z'; x++)
+			_putchar(x);
+		_putchar('\n');
 	}
 }

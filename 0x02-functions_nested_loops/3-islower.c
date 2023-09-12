@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * main -  print
- *
- * Return: Always 0 (success)
-*/
+* _islower - cheks if character is lowercase
+* @c: character to check if lowercase
+* Description: this function prints '_putchar'
+* Return: always return 0
+**/
 int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')

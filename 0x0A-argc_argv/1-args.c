@@ -9,13 +9,10 @@
 * Return: Always 0 (Success)
 */
 
-int main(int argc, char *argv[]__attribute__((unused)))
+int main(int argc, char *argv[])
 {
-	int i;
+	(void) argv;
 
-	for (i = 0; i < argc; i++)
-	{
-		printf("%d\n", argc);
-	}
+	printf("%d\n", argc);
 	return (0);
 }

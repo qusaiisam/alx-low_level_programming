@@ -9,17 +9,19 @@
 * Return: Always 0 (Success)
 */
 
-int _atoi(int argc, char *argv[])
+int main(int argc, char *argv[])
+		
 {
-	int i, sum = 0;
+	int sum, num1, num2;
 
-	if (argc > 1)
+	if (argc < 3 || argc > 3)	
 	{
-		for (i = 0; i < argc; i++)
-		{
-			sum = sum + _atoi(argv[i]);
-		}
-		printf("%d", sum);
+		printf("Error\n");
+		return (1);	
 	}
-	return (0);
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	sum = num1 * num2;
+	printf("%d\n", sum);
+	return (0);		
 }

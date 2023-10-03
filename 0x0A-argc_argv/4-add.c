@@ -10,15 +10,15 @@
 * Return: Always 0 (Success)
 */
 
-int main(int argc, char *argv[])
+int _atoi(char *argv[])
 {
 	int i, sum = 0;
 
-	if (argc > 1)
+	if (argv[] > 1)
 	{
-		for (i = 0; i < argc; i++)
+		for (i = 1; i < argv[]; i++)
 		{
-			sum = sum + _atoi(argv[i]);
+			sum = sum + argv[i];
 		}
 		printf("%d", sum);
 	}

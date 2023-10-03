@@ -9,9 +9,9 @@
 * Return: Always 0 (Success)
 */
 
-int _atoi( char *argv[])
+int _atoi(int argc, char *argv[])
 {
-	int i, sum;
+	int i, sum = 0;
 
 	if (argc > 1)
 	{

@@ -16,9 +16,9 @@ char *_memset(char *s, char b, unsigned int n)
 
 	for (i = 0; i < n; i++)
 	{
-		s[i] = b;	
+		s[i] = b;
 	}
-	return (s);		
+	return (s);
 }
 
 /**
@@ -29,7 +29,7 @@ char *_memset(char *s, char b, unsigned int n)
 * Return: pointer to allocated memory
 */
 
-void *_calloc(unsigned int nmemb, unsigned int size)		
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
 
@@ -45,5 +45,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	_memset(ptr, 0, nmemb * size);
 
-	return (ptr);		
+	return (ptr);
 }

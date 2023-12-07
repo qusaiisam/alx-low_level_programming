@@ -1,83 +1,55 @@
 #include "lists.h"
 
 /**
- * delete_beginning - delete node at beginning of list
+ * delete_dnodeint_at_index - Delete node at nth index
  *
- * @head: start of linked list
- * Return: 1 if it succeeded, -1 if it failed
- */
-
-int delete_beginning(dlistint_t **head)
-{
-	dlistint_t *deleteMe = NULL;
-
-	deleteMe = *head;
-
-	*head = (*head)->next;
-	free(deleteMe);
-	return (1);
-}
-
-/**
- * delete_end - delete last node
+ * @head: Head of node
  *
- * @current: pointer to current node
- * Return: 1 if it succeeded, -1 if it failed
- */
-
-int delete_end(dlistint_t *current)
-{
-	dlistint_t *deleteMe = NULL;
-
-	deleteMe = current;
-
-	current = current->prev;
-	current->next = NULL;
-	free(deleteMe);
-	return (1);
-}
-
-/**
- * delete_dnodeint_at_index - deletes the node at index of a
- * dlistint_t linked list
+ * @index: index
  *
- * @head: start of linked list
- * @index: index to node to be deleted
- * Return: 1 if it succeeded, -1 if it failed
+ * Return: 1 succeed, -1 if fail
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *current = NULL;
-	dlistint_t *previous = NULL;
-	unsigned int count = 0;
+	dlistint_t *node;
+	unsigned int count;
 
-	if (*head == NULL || head == NULL)
+	if (*head == NULL)
 		return (-1);
 
-	current = *head;
-
-/*delete first node*/
+	node = *head;
 	if (index == 0)
-		return (delete_beginning(head));
-/*move to index position*/
-	while (count < index && current != NULL)
 	{
-		if (count == index - 1)
-			previous = current;
-		count++;
-		current = current->next;
+		*head = node->next;
+		if (node->next != NULL)
+		{
+			node->next->prev = NULL;
+		}
+		free(node);
+		return (1);
+	}
+	for (count = 0; node != NULL && count < index - 1 ; count++)
+	{
+		node = node->next;
+	}
+	if (node == NULL || node->next == NULL)
+	{
+		return (-1);
 	}
 
-	if (current == NULL)
-		return (-1);
-
-/*delete last node*/
-	if (current->next == NULL)
-		return (delete_end(current));
-/*delete middle node*/
-	previous->next = current->next;
-	(current->next)->prev = previous;
-	free(current);
-	return (1);
+	if (node->next->next != NULL)
+	{
+		node->next = node->next->next;
+		free(node->next->prev);
+		node->next->prev = node;
+		return (1);
+	}
+	else
+	{
+		free(node->next);
+		node->next = NULL;
+		return (1);
+	}
+	return (-1);
 }
